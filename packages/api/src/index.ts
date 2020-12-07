@@ -4,7 +4,7 @@ const port = 4000; // default port to listen
 
 // define a route handler for the default home page
 app.get( "/", ( req, res ) => {
-    res.send( "Hello from SkelleyBelly!" );
+    res.send( "Hello World!" );
 } );
 
 // start the Express server
