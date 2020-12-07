@@ -1,6 +1,6 @@
 {
   "name": "api",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "src/index.ts",
   "scripts": {
@@ -22,8 +22,15 @@
   },
   "nodemonConfig": {
     "restartable": "rs",
-    "ignore": [".git", "node_modules/", "dist/", "coverage/"],
-    "watch": ["src/"],
+    "ignore": [
+      ".git",
+      "node_modules/",
+      "dist/",
+      "coverage/"
+    ],
+    "watch": [
+      "src/"
+    ],
     "execMap": {
       "ts": "node -r ts-node/register"
     },
