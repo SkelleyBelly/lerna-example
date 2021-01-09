@@ -1,19 +1,22 @@
-version: '3.6'
+version: "3.6"
 services:
   postgres:
     image: postgres:12
     restart: always
-    volumes:
-    - ./db_data:/var/lib/postgresql/data
+    # volumes:
+    #   - db_data:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: postgrespassword
   graphql-engine:
-    image: hasura/graphql-engine:v1.3.3
+    image: hasura/graphql-engine:v1.3.3.cli-migrations-v2
     ports:
-    - "8080:8080"
+      - "8080:8080"
     depends_on:
-    - "postgres"
+      - "postgres"
     restart: always
+    volumes:
+      - ./migrations:/hasura-migrations
+      - ./metadata:/hasura-metadata
     environment:
       HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:postgrespassword@postgres:5432/postgres
       ## enable the console served by server
@@ -23,7 +26,7 @@ services:
       HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
       ## uncomment next line to set an admin secret
       # HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
-  api: 
+  api:
     stdin_open: true
     build:
       context: ./packages/api/
@@ -33,7 +36,7 @@ services:
     volumes:
       - "/api/node_modules"
       - "./packages/api/:/api"
-  client: 
+  client:
     stdin_open: true
     build:
       context: ./packages/client/
@@ -46,6 +49,6 @@ services:
     depends_on:
       - graphql-engine
       - api
-# volumes:
-#   db_data:
+volumes:
+  db_data:
 
