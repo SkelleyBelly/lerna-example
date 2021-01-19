@@ -26,29 +26,29 @@ services:
       HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
       ## uncomment next line to set an admin secret
       # HASURA_GRAPHQL_ADMIN_SECRET: myadminsecretkey
-  api:
-    stdin_open: true
-    build:
-      context: ./packages/api/
-      dockerfile: Dockerfile.dev
-    ports:
-      - 4000:4000
-    volumes:
-      - "/api/node_modules"
-      - "./packages/api/:/api"
-  client:
-    stdin_open: true
-    build:
-      context: ./packages/client/
-      dockerfile: Dockerfile.dev
-    ports:
-      - 3000:3000
-    volumes:
-      - "/app/node_modules"
-      - "./packages/client/:/app"
-    depends_on:
-      - graphql-engine
-      - api
+  # api:
+  #   stdin_open: true
+  #   build:
+  #     context: ./packages/api/
+  #     dockerfile: Dockerfile.dev
+  #   ports:
+  #     - 4000:4000
+  #   volumes:
+  #     - "/api/node_modules"
+  #     - "./packages/api/:/api"
+  # client:
+  #   stdin_open: true
+  #   build:
+  #     context: ./packages/client/
+  #     dockerfile: Dockerfile.dev
+  #   ports:
+  #     - 3000:3000
+  #   volumes:
+  #     - "/app/node_modules"
+  #     - "./packages/client/:/app"
+  #   depends_on:
+  #     - graphql-engine
+  #     - api
 volumes:
   db_data:
 

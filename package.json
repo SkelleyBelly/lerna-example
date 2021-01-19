@@ -1,33 +1,18 @@
 {
-  "name": "hasura_prototype",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "concurrently 'docker-compose up' 'lerna run dev'"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+  "workspaces": [
+    "packages/*"
+  ],
   "devDependencies": {
+    "concurrently": "^5.3.0",
     "hasura-cli": "^1.3.3",
     "lerna": "^3.22.1"
-  }
+  },
+  "name": "hasura_prototype",
+  "repository": "git@github.com:SkelleyBelly/docker-compose-prototype.git",
+  "author": "Nathan Skelley <nathan.skelley@bath.edu>"
 }
