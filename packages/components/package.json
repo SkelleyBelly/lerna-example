@@ -22,7 +22,8 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "compile": "tsc",
+    "compile": "tsc --project tsconfig.build.json",
+    "test": "react-scripts test",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
