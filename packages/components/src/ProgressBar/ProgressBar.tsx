@@ -20,7 +20,7 @@ const useStyles = makeStyles<Theme, ProgressBarProps>((theme: Theme) => ({
   bar: ({ value }) => ({
     borderRadius: 10,
     "&::before": {
-      color: 'white',
+      color: "white",
       content: `"${value}%"`,
       display: "block",
       textAlign: "right",
@@ -37,7 +37,7 @@ export interface ProgressBarProps {
 }
 
 const ProgressBar = ({ value }: ProgressBarProps) => {
-  const normalised = Math.min(100, value);
+  const normalised = Math.round(Math.min(100, value));
 
   const classes = useStyles({ value: normalised });
 

@@ -76,6 +76,24 @@ const App = () => {
     });
   };
 
+  const [total, selected, max] = data.reduce(
+    (
+      [accTotal, accSelected, accMax],
+      { total: currTotal, selected: currSelected }
+    ) => {
+      const currMax = Math.max(accMax, currTotal);
+
+      if (currSelected) {
+        return [accTotal + currTotal, accSelected + 1, currMax];
+      }
+      return [accTotal, accSelected, currMax];
+    },
+    [0, 0, 0]
+  );
+
+  const avgEstimate = total / (selected || 1);
+  const savingFromMax = avgEstimate ? Math.round(((max - avgEstimate) / max) * 100) : 0;
+
   return (
     <Box display="flex" height="100%" overflow="hidden">
       <Navbar />
@@ -84,12 +102,12 @@ const App = () => {
           <WelcomeMessage name="Nathan" />
         </Box>
         <MetricBar
-          oldBillValue={50000}
-          avgEstimateValue={40000}
-          savingValue={20}
+          oldBillValue={total}
+          avgEstimateValue={avgEstimate}
+          savingValue={savingFromMax}
         />
         <Box mx={6} my={8}>
-          <ProgressBar value={50} />
+          <ProgressBar value={(selected / data.length) * 100} />
         </Box>
         <Box mx={6} mb={20}>
           <Table data={data} onToggle={handleToggle} />
