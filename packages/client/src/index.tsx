@@ -3,20 +3,20 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ThemeProvider } from "@hasura-prototype/components";
-// import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
-// const client = new ApolloClient({
-//   uri: "http://localhost:8080/v1/graphql",
-//   cache: new InMemoryCache(),
-// });
+const client = new ApolloClient({
+  uri: "http://localhost:8080/v1/graphql",
+  cache: new InMemoryCache(),
+});
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <ApolloProvider client={client}> */}
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
-    {/* </ApolloProvider> */}
+    <ApolloProvider client={client}>
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
+    </ApolloProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

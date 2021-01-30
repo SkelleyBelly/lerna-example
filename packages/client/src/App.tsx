@@ -7,6 +7,7 @@ import {
 } from "@hasura-prototype/components";
 import { Box } from "@material-ui/core";
 import { useState } from "react";
+import { useQuery, gql } from "@apollo/client";
 
 const initialData = [
   {
@@ -65,8 +66,27 @@ const initialData = [
   },
 ];
 
+const QUERY = gql`
+  query AllQuotes {
+    Quotes {
+      id
+      name
+      monthly
+      rating
+      selected
+      setup
+      term
+      total
+    }
+  }
+`;
+
 const App = () => {
   const [data, setData] = useState(initialData);
+
+  const { data: queryData } = useQuery(QUERY);
+
+  console.log({ queryData });
 
   const handleToggle = (index: number) => {
     setData((currentData) => {
@@ -92,7 +112,9 @@ const App = () => {
   );
 
   const avgEstimate = total / (selected || 1);
-  const savingFromMax = avgEstimate ? Math.round(((max - avgEstimate) / max) * 100) : 0;
+  const savingFromMax = avgEstimate
+    ? Math.round(((max - avgEstimate) / max) * 100)
+    : 0;
 
   return (
     <Box display="flex" height="100%" overflow="hidden">
