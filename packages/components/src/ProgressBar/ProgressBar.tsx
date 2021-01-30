@@ -49,7 +49,7 @@ const ProgressBar = ({ value }: ProgressBarProps) => {
       <LinearProgress
         variant="determinate"
         value={normalised}
-        classes={classes}
+        classes={{ root: classes.root, bar: classes.bar }}
       />
     </Box>
   );

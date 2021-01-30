@@ -1,6 +1,6 @@
 import { Typography, Box, makeStyles, Theme } from "@material-ui/core";
+import AnimatedText from "../AnimatedText";
 import { Wallet, Calculator } from "../Icons";
-import { numberWithCommas } from "../utils";
 
 const useStyles = makeStyles((theme: Theme) => ({
   title: {
@@ -23,11 +23,6 @@ const Counter = ({ value, icon = "wallet", caption }: CounterProps) => {
 
   return (
     <Box display="flex" alignItems="center">
-      {/* <img
-        src={icon === "wallet" ? wallet : calculator}
-        alt="Wallet Icon"
-        className={classes.icon}
-      /> */}
       <Box className={classes.icon}>
         {icon === "wallet" ? <Wallet /> : <Calculator />}
       </Box>
@@ -40,7 +35,10 @@ const Counter = ({ value, icon = "wallet", caption }: CounterProps) => {
           {caption}
         </Typography>
         <Typography variant="h4" color="primary">
-          <b>{`$${numberWithCommas(value)}`}</b>
+          <b>
+            <span>$</span>
+            <AnimatedText value={value} />
+          </b>
         </Typography>
       </Box>
     </Box>

@@ -3,7 +3,7 @@ import { Story, Meta } from "@storybook/react";
 import ProgressBar, { ProgressBarProps } from "./ProgressBar";
 
 export default {
-  title: "Example/ProgressBar",
+  title: "ProgressBar",
   component: ProgressBar,
 } as Meta;
 

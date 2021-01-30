@@ -1,0 +1,22 @@
+schema: 
+  http://localhost:8080/v1/graphql
+
+documents:
+  - './src/**/query.ts'
+
+generates:
+  # this generates the main src/types file
+  ./src/types.ts:
+    plugins:
+      - typescript
+
+  # this generates each query file
+  ./src:
+    preset: near-operation-file
+    presetConfig:
+      extension: .tsx
+      baseTypesPath: types.ts
+      folder: __generated__
+    plugins:
+      - typescript-operations
+      - typescript-react-apollo

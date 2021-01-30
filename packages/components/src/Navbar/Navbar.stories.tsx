@@ -3,7 +3,7 @@ import { Story, Meta } from "@storybook/react";
 import Navbar from "./Navbar";
 
 export default {
-  title: "Example/Navbar",
+  title: "Navbar",
   component: Navbar,
 } as Meta;
 

@@ -4,7 +4,7 @@ import Table, { TableProps } from "./Table";
 import RatingComponent, { RatingProps } from "./Rating";
 
 export default {
-  title: "Example/Table",
+  title: "Table",
   component: Table,
   argTypes: { onToggle: { action: "toggled" } },
 } as Meta;

@@ -7,7 +7,7 @@ const rating =  () =>
   xmlns="http://www.w3.org/2000/svg"
 >
   <circle cx="8" cy="8" r="3" fill="#907BBE" />
-  <circle cx="8" cy="8" r="7" stroke="#907BBE" stroke-width="2" />
+  <circle cx="8" cy="8" r="7" stroke="#907BBE" strokeWidth="2" />
 </svg>
 
 export default rating;

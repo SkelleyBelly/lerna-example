@@ -5,10 +5,11 @@ import {
   Theme,
   Typography,
 } from "@material-ui/core";
+import AnimatedText from "../AnimatedText";
 
 const [CIRCLE_SIZE, CIRCLE_THICKNESS] = [140, 5];
 
-const useStyles = makeStyles((theme:Theme) => ({
+const useStyles = makeStyles((theme: Theme) => ({
   top: {
     position: "absolute",
     top: 0,
@@ -30,11 +31,11 @@ const useStyles = makeStyles((theme:Theme) => ({
     alignItems: "center",
   },
   labelCaption: {
-      marginBottom: theme.spacing(-2),
+    marginBottom: theme.spacing(-2),
   },
   labelCount: {
-      marginBottom: theme.spacing(1)
-  }
+    marginBottom: theme.spacing(1),
+  },
 }));
 
 export interface DoughnutProps {
@@ -61,9 +62,14 @@ const Doughnut = ({ value }: DoughnutProps) => {
         className={classes.top}
       />
       <Box className={classes.labelWrapper}>
-        <Typography variant="caption" className={classes.labelCaption}>You Save</Typography>
+        <Typography variant="caption" className={classes.labelCaption}>
+          You Save
+        </Typography>
         <Typography variant="h4" color="primary" className={classes.labelCount}>
-          <b>{`${Math.round(value)}%`}</b>
+          <b>
+            <AnimatedText value={value} />
+            <span>%</span>
+          </b>
         </Typography>
       </Box>
     </Box>

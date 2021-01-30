@@ -3,7 +3,7 @@ import { Story, Meta } from "@storybook/react";
 import MetricBar, {MetricBarProps} from "./MetricBar";
 
 export default {
-  title: "Example/MetricBar",
+  title: "MetricBar",
   component: MetricBar,
 } as Meta;
 

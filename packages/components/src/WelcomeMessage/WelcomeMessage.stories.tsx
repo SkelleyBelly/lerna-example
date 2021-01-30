@@ -3,7 +3,7 @@ import { Story, Meta } from "@storybook/react";
 import WelcomeMessage, { WelcomeMessageProps } from "./WelcomeMessage";
 
 export default {
-  title: "Example/WelcomeMessage",
+  title: "WelcomeMessage",
   component: WelcomeMessage,
 } as Meta;
 

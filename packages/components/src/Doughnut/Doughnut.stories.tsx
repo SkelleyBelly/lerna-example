@@ -3,7 +3,7 @@ import { Story, Meta } from "@storybook/react";
 import Doughnut, { DoughnutProps } from "./Doughnut";
 
 export default {
-  title: "Example/Doughnut",
+  title: "Doughnut",
   component: Doughnut,
 } as Meta;
 

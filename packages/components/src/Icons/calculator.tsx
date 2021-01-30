@@ -13,7 +13,7 @@ const calculator = () => (
       height="45"
       rx="4"
       stroke="white"
-      stroke-width="2"
+      strokeWidth="2"
     />
     <rect
       x="1"
@@ -22,7 +22,7 @@ const calculator = () => (
       height="20"
       rx="4"
       stroke="white"
-      stroke-width="2"
+      strokeWidth="2"
     />
     <rect
       x="1"
@@ -31,13 +31,13 @@ const calculator = () => (
       height="20"
       rx="4"
       stroke="white"
-      stroke-width="2"
+      strokeWidth="2"
     />
-    <path d="M4 11L18 11" stroke="white" stroke-width="2" />
-    <path d="M30 21L42 21" stroke="white" stroke-width="2" />
-    <path d="M30 26L42 26" stroke="white" stroke-width="2" />
-    <path d="M4 36H18" stroke="white" stroke-width="2" />
-    <path d="M11 29L11 43" stroke="white" stroke-width="2" />
+    <path d="M4 11L18 11" stroke="white" strokeWidth="2" />
+    <path d="M30 21L42 21" stroke="white" strokeWidth="2" />
+    <path d="M30 26L42 26" stroke="white" strokeWidth="2" />
+    <path d="M4 36H18" stroke="white" strokeWidth="2" />
+    <path d="M11 29L11 43" stroke="white" strokeWidth="2" />
   </svg>
 );
 
