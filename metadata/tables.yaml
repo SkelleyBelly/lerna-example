@@ -1,3 +1,10 @@
 - table:
     schema: public
+    name: Companies
+- table:
+    schema: public
     name: Quotes
+  object_relationships:
+  - name: Company
+    using:
+      foreign_key_constraint_on: company_id
