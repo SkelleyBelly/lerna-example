@@ -2,9 +2,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "concurrently 'docker-compose up' 'lerna run dev'",
-    "console": "hasura console",
-    "add-seeds": "hasura seeds apply"
+    "start": "lerna dev"
   },
   "workspaces": [
     "packages/*"

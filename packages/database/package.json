@@ -1,0 +1,28 @@
+{
+  "name": "database",
+  "version": "0.1.7",
+  "description": "> TODO: description",
+  "author": "Nathan Skelley <nathan.skelley@bath.edu>",
+  "homepage": "https://github.com/SkelleyBelly/docker-compose-prototype#readme",
+  "license": "ISC",
+  "main": "lib/database.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SkelleyBelly/docker-compose-prototype.git"
+  },
+  "scripts": {
+    "start": "docker-compose up",
+    "console": "hasura console",
+    "add-seeds": "hasura seeds apply"
+  },
+  "bugs": {
+    "url": "https://github.com/SkelleyBelly/docker-compose-prototype/issues"
+  }
+}
