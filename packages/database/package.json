@@ -1,5 +1,5 @@
 {
-  "name": "database",
+  "name":"@hasura-prototype/database",
   "version": "0.3.0",
   "description": "> TODO: description",
   "author": "Nathan Skelley <nathan.skelley@bath.edu>",
