@@ -6,7 +6,6 @@ import {
   Table,
 } from "@hasura-prototype/components";
 import { Box } from "@material-ui/core";
-import { FC } from "react";
 import {
   useGetAllQuotesQuery,
   GetAllQuotesQuery,
@@ -59,7 +58,7 @@ const getStats = (data: GetAllQuotesQuery["Quotes"]) => {
   return { total, selected, max, savingFromMax, avgEstimate };
 };
 
-const App: FC = () => {
+const App = () => {
   const { data: queryData } = useGetAllQuotesQuery();
 
   const [mutate] = useSetSelectedMutation();
@@ -97,6 +96,13 @@ const App: FC = () => {
                 variables: {
                   id: data[index].id,
                   selected: !data[index].selected,
+                },
+                optimisticResponse: {
+                  update_Quotes_by_pk: {
+                    id: data[index].id,
+                    selected: !data[index].selected,
+                    __typename: "Quotes",
+                  },
                 },
               })
             }

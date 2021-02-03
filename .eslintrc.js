@@ -15,7 +15,6 @@ module.exports = {
     "airbnb",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    // "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:jest/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:prettier/recommended",
