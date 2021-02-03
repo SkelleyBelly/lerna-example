@@ -1,1 +1,1 @@
-export {default} from './MetricBar';
+export { default } from "./MetricBar";

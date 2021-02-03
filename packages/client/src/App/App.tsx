@@ -6,6 +6,7 @@ import {
   Table,
 } from "@hasura-prototype/components";
 import { Box } from "@material-ui/core";
+import { FC } from "react";
 import {
   useGetAllQuotesQuery,
   GetAllQuotesQuery,
@@ -22,7 +23,7 @@ const mapData = (data: GetAllQuotesQuery["Quotes"]) =>
       setup,
       term,
       total,
-    }: any) => ({
+    }) => ({
       id,
       company: name,
       rating,
@@ -37,8 +38,8 @@ const mapData = (data: GetAllQuotesQuery["Quotes"]) =>
 const getStats = (data: GetAllQuotesQuery["Quotes"]) => {
   const [total, selected, max] = data.reduce(
     (
-      [accTotal, accSelected, accMax]: any,
-      { total: currTotal, selected: currSelected }: any
+      [accTotal, accSelected, accMax],
+      { total: currTotal, selected: currSelected }
     ) => {
       const currMax = Math.max(accMax, currTotal);
 
@@ -58,7 +59,7 @@ const getStats = (data: GetAllQuotesQuery["Quotes"]) => {
   return { total, selected, max, savingFromMax, avgEstimate };
 };
 
-const App = () => {
+const App: FC = () => {
   const { data: queryData } = useGetAllQuotesQuery();
 
   const [mutate] = useSetSelectedMutation();

@@ -7,6 +7,10 @@ documents:
 generates:
   # this generates the main src/types file
   ./src/types.ts:
+    config: 
+      scalars:
+        uuid: string
+        numeric: number
     plugins:
       - typescript
 

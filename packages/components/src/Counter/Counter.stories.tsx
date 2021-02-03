@@ -12,5 +12,5 @@ const Template: Story<CounterProps> = (args) => <Counter {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
   value: 125000,
-  caption: "Cost of Old Bill"
+  caption: "Cost of Old Bill",
 };

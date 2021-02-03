@@ -12,7 +12,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import { numberWithCommas } from "../utils";
-import Rating, { RatingProps } from "./Rating";
+import Rating from "./Rating";
 
 const useStyles = makeStyles((theme: Theme) => ({
   table: {
@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 export interface TableProps {
   data: Array<{
     company: string;
-    rating: RatingProps["value"];
+    rating: number;
     term: number;
     setup: number;
     monthly: number;

@@ -35,7 +35,7 @@ const theme = createMuiTheme({
           height: "100%",
           background:
             "radial-gradient(114.28% 114.28% at 50% 10.88%, #324376 0%, #1E222D 100%)",
-            backgroundColor: "transparent"
+          backgroundColor: "transparent",
         },
         html: {
           height: "100%",

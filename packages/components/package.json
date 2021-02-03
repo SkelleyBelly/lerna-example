@@ -29,13 +29,8 @@
     "compile": "tsc --project tsconfig.build.json",
     "test": "react-scripts test",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "build-storybook": "build-storybook",
+    "lint": "eslint src/ --fix --ext .jsx,.js,.ts,.tsx"
   },
   "browserslist": {
     "production": [

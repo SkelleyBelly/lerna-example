@@ -1,6 +1,6 @@
 import { Story, Meta } from "@storybook/react";
 
-import MetricBar, {MetricBarProps} from "./MetricBar";
+import MetricBar, { MetricBarProps } from "./MetricBar";
 
 export default {
   title: "MetricBar",
@@ -10,8 +10,8 @@ export default {
 const Template: Story<MetricBarProps> = (args) => <MetricBar {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args ={
+Primary.args = {
   avgEstimateValue: 95000,
   oldBillValue: 125000,
-  savingValue: 40
-}
+  savingValue: 40,
+};

@@ -11,5 +11,5 @@ const Template: Story<ProgressBarProps> = (args) => <ProgressBar {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  value: 40
+  value: 40,
 };

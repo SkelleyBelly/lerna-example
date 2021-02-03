@@ -9,14 +9,14 @@ export interface AnimatedTextProps {
 const AnimatedText = ({ value }: AnimatedTextProps) => {
   const theme = useTheme();
 
-  const props = useSpring<{ width: number }>({
+  const { width } = useSpring<{ width: number }>({
     width: value || 0,
     config: { duration: theme.transitions.duration.standard },
   });
 
   return (
     <animated.span>
-      {props.width.interpolate((x) => numberWithCommas(x as number))}
+      {width.interpolate((x) => numberWithCommas(x as number))}
     </animated.span>
   );
 };
