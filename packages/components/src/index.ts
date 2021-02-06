@@ -6,3 +6,4 @@ export { default as Table } from "./Table";
 export { default as MetricBar } from "./MetricBar";
 export { default as ThemeProvider } from "./ThemeProvider";
 export { default as WelcomeMessage } from "./WelcomeMessage";
+export * from "./testUtils";

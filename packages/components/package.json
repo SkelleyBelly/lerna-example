@@ -28,9 +28,15 @@
   "scripts": {
     "compile": "tsc --project tsconfig.build.json",
     "test": "react-scripts test",
+    "test:coverage": "react-scripts test --collectCoverage --watchAll=false",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "lint": "eslint src/ --fix --ext .jsx,.js,.ts,.tsx"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}"
+    ]
   },
   "browserslist": {
     "production": [

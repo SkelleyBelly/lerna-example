@@ -1,4 +1,4 @@
-import { Typography } from "@material-ui/core";
+import { Box, Typography } from "@material-ui/core";
 import { FC } from "react";
 
 export interface WelcomeMessageProps {
@@ -8,14 +8,14 @@ export interface WelcomeMessageProps {
 const WelcomeMessage: FC<WelcomeMessageProps> = ({
   name,
 }: WelcomeMessageProps) => (
-  <>
-    <Typography variant="body1" color="secondary" display="inline">
+  <Typography variant="body1">
+    <Box color="secondary.main" component="span">
       {`Hi ${name}, `}
-    </Typography>
-    <Typography variant="body1" color="textPrimary" display="inline">
+    </Box>
+    <Box color="text.primary" component="span">
       here&apos;s the quote you requested
-    </Typography>
-  </>
+    </Box>
+  </Typography>
 );
 
 export default WelcomeMessage;

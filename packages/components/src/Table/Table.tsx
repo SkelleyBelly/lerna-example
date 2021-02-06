@@ -90,7 +90,7 @@ const Table = ({ data, onToggle }: TableProps) => {
           <TableCell align="center" className={classes.headerCell}>
             TOTAL
           </TableCell>
-          <TableCell className={classes.headerCell} />
+          <TableCell className={classes.headerCell}>SELECTED</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
@@ -125,6 +125,7 @@ const Table = ({ data, onToggle }: TableProps) => {
                 </TableCell>
                 <TableCell align="center" className={classes.bodyCell}>
                   <Switch
+                    inputProps={{ "aria-label": "Select Quote" }}
                     color="primary"
                     checked={selected}
                     onChange={() => onToggle(index)}

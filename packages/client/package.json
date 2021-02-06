@@ -7,6 +7,7 @@
     "codegen": "graphql-codegen",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:coverage": "react-scripts test --collectCoverage --watchAll=false",
     "eject": "react-scripts eject",
     "lint": "eslint src/ --fix --ext .jsx,.js,.ts,.tsx"
   },
@@ -35,6 +36,13 @@
     "@graphql-codegen/typescript-operations": "^1.17.8",
     "@graphql-codegen/typescript-react-apollo": "^2.2.1",
     "@graphql-typed-document-node/core": "^3.1.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/**/query.ts",
+      "!src/**/__generated__/**"
+    ]
   },
   "browserslist": {
     "production": [
