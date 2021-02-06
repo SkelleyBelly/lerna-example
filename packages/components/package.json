@@ -1,7 +1,6 @@
 {
   "name": "@hasura-prototype/components",
   "version": "0.4.1",
-  "private": true,
   "main": "dist/index",
   "typings": "dist/index",
   "files": [
