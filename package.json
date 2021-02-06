@@ -2,7 +2,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "lerna dev",
+    "start": "lerna start",
     "lint": "eslint packages/*/src/ --fix --ext .jsx,.js,.ts,.tsx"
   },
   "workspaces": [
