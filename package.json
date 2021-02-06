@@ -3,7 +3,8 @@
   "private": true,
   "scripts": {
     "start": "lerna start",
-    "lint": "eslint packages/*/src/ --fix --ext .jsx,.js,.ts,.tsx"
+    "lint": "eslint packages/*/src/ --fix --ext .jsx,.js,.ts,.tsx",
+    "release": "lerna version --conventional-commits --force-publish"
   },
   "workspaces": [
     "packages/*"
