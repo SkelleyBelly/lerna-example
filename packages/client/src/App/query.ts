@@ -3,6 +3,11 @@ import { gql } from "@apollo/client";
 
 const GET_ALL_QUOTES = gql`
   query GetAllQuotes {
+    MostProfitableCompany: Companies(order_by: { profit: desc }, limit: 1) {
+      id
+      name
+      profit
+    }
     Quotes {
       Company {
         id
