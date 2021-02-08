@@ -3,10 +3,6 @@ import { gql } from "@apollo/client";
 
 const GET_ALL_QUOTES = gql`
   query GetAllQuotes {
-    MostValuableCompany: Companies(order_by: { value: desc }, limit: 1) {
-      id
-      name
-    }
     Quotes {
       Company {
         id

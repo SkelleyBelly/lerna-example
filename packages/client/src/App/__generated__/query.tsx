@@ -5,9 +5,6 @@ import * as Types from "../../types";
 export type GetAllQuotesQueryVariables = Types.Exact<{ [key: string]: never }>;
 
 export type GetAllQuotesQuery = { __typename?: "query_root" } & {
-  MostValuableCompany: Array<
-    { __typename?: "Companies" } & Pick<Types.Companies, "id" | "name">
-  >;
   Quotes: Array<
     { __typename?: "Quotes" } & Pick<
       Types.Quotes,
@@ -34,10 +31,6 @@ export type SetSelectedMutation = { __typename?: "mutation_root" } & {
 
 export const GetAllQuotesDocument = gql`
   query GetAllQuotes {
-    MostValuableCompany: Companies(order_by: { value: desc }, limit: 1) {
-      id
-      name
-    }
     Quotes {
       Company {
         id

@@ -5,7 +5,7 @@ import {
   ProgressBar,
   Table,
 } from "@hasura-prototype/components";
-import { Box, Typography } from "@material-ui/core";
+import { Box } from "@material-ui/core";
 import {
   useGetAllQuotesQuery,
   GetAllQuotesQuery,
@@ -88,8 +88,6 @@ const App = () => {
         <Box mx={6} my={8}>
           <ProgressBar value={(selected / data.length) * 100} />
         </Box>
-        <Typography>Most Valuable Company</Typography>
-        <Typography>{queryData?.MostValuableCompany[0].name}</Typography>
         <Box mx={6} mb={20}>
           <Table
             data={data}
