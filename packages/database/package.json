@@ -1,6 +1,6 @@
 {
   "name": "@hasura-prototype/database",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "> TODO: description",
   "author": "Nathan Skelley <nathan.skelley@bath.edu>",
   "homepage": "https://github.com/SkelleyBelly/docker-compose-prototype#readme",
